@@ -66,11 +66,13 @@ insert into users (login, password) values ('user_a', 'root_a');
 insert into users (login, password) values ('user_b', 'root_b');
 insert into users (login, password) values ('user_c', 'root_c');
 insert into users (login, password) values ('user_d', 'root_d');
+insert into users (login, password) values ('u', 'r');
 
 alter table users add column enabled boolean default true;
 alter table users add column role_id integer references roles(id);
 update users set role_id=1 where id=1;
 update users set role_id=2 where id in(2,3,4);
+update users set role_id=1 where id=5;
 insert into users(login, password,enabled,role_id) values('user','$2a$04$W7m5PvX/3XUgeA.cEvXLiO/TAV/MQW0DRAOqO5oOQJa4aIvMSGpyS',true,1);
 insert into users(login, password,enabled,role_id) values('root','root',true,1);
 
