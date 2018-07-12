@@ -22,4 +22,10 @@ public class UserController {
         model.addAttribute("users", this.userService.getAll());
         return "users";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String getAllUser(ModelMap model) {
+        model.addAttribute("users", this.userService.getAll());
+        return "login";
+    }
 }
